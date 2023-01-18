@@ -74,7 +74,7 @@ def evaluate(model: LogisticRegression, data: pd.DataFrame) -> float:
 
 @workflow
 def training_workflow(
-    hyperparameters: Hyperparameters,
+    hyperparameters: Hyperparameters = Hyperparameters(C=0.1, max_iter=5000),
     test_size: float = 0.2,
     random_state: int = 42,
 ) -> Tuple[LogisticRegression, float, float]:
